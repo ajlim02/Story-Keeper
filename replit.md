@@ -78,3 +78,24 @@ The `shared/` directory contains TypeScript types and Zod schemas used by both f
 - Material Design 3 principles adapted for data dashboard use case
 - Noto Sans KR (Korean) + Inter fonts via Google Fonts CDN
 - Dark/light theme support with system preference detection
+
+## Netlify Deployment
+
+### Configuration
+- `netlify.toml` - Build and redirect configuration
+- `netlify/functions/` - Serverless API functions
+
+### Build Commands
+- Build: `npm run build`
+- Publish directory: `dist/public`
+- Functions directory: `netlify/functions`
+
+### API Functions
+- `/api/months` → `/.netlify/functions/months`
+- `/api/radar` → `/.netlify/functions/radar`
+
+### Deployment Steps
+1. Connect your GitHub repo to Netlify
+2. Set build command: `npm run build`
+3. Set publish directory: `dist/public`
+4. Functions are auto-detected from `netlify/functions/`
